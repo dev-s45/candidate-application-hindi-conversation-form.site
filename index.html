@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Application & Job Portal</title>
+    <link rel="icon" type="image/png" href="logo.png">
+<link rel="shortcut icon" type="image/png" href="logo.png">
+
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI Trainer Job Application (Hindi)">
+<meta property="og:description" content="Minimum 10th Pass required. Apply to train AI models using your Hindi language skills. Hourly payout model.">
+
+<meta property="og:image" content="https://i.postimg.cc/YqrSTWYz/AI-Trainer-Hiring-Banner.png">
+
+<meta property="og:url" content="https://i.postimg.cc/YqrSTWYz/AI-Trainer-Hiring-Banner.png">
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Trainer Hiring (Hindi)">
+<meta name="twitter:description" content="Shape the future with AI. Hindi language trainers needed.">
+
+
+<meta name="twitter:image" content="https://i.postimg.cc/YqrSTWYz/AI-Trainer-Hiring-Banner.png">
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --secondary: #0f172a;
+            --bg-glass: rgba(255, 255, 255, 0.95);
+            --border-color: #e2e8f0;
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
+            --error: #ef4444;
+            --success: #10b981;
+            --radius: 12px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f0f4ff 0%, #e8eefc 100%);
+            color: var(--text-dark);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 760px;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+        }
+
+        .header {
+            background: var(--secondary);
+            color: #ffffff;
+            padding: 28px 32px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .header p {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            margin-top: 6px;
+        }
+
+        .content-body {
+            padding: 32px;
+        }
+
+        /* JD Section Styling */
+        #jd-section {
+            display: block;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .jd-card {
+            background: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 24px;
+            max-height: 380px;
+            overflow-y: auto;
+            margin-bottom: 24px;
+        }
+
+        .jd-card h3 {
+            color: var(--secondary);
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+
+        .jd-card ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .jd-card ul li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+            color: #475569;
+            line-height: 1.5;
+        }
+
+        .jd-card ul li::before {
+            content: "\f00c";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+
+        /* Button Styling */
+        .btn-primary {
+            width: 100%;
+            background: var(--primary);
+            color: #ffffff;
+            padding: 16px;
+            border: none;
+            border-radius: var(--radius);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-hover);
+            transform: translateY(-1px);
+        }
+
+        /* Form Section Styling */
+        #form-section {
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin: 20px 0 14px 0;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #f1f5f9;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+            position: relative;
+        }
+
+        .full-width {
+            grid-column: span 2;
+        }
+
+        label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 6px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1.5px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.2s;
+            background: #ffffff;
+        }
+
+        input:focus, select:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .error-msg {
+            color: var(--error);
+            font-size: 0.78rem;
+            margin-top: 4px;
+            display: none;
+        }
+
+        /* Checkbox Options */
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 16px 0;
+            background: #f8fafc;
+            padding: 16px;
+            border-radius: 10px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        .checkbox-item input {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--primary);
+            cursor: pointer;
+        }
+
+        /* Digital Signature Field */
+        .signature-field {
+            text-transform: uppercase;
+            font-family: monospace;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        /* Modal Overlay (Locked Screen) */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(6px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            padding: 20px;
+        }
+
+        .modal-card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 36px 28px;
+            max-width: 480px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            animation: modalPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .modal-icon-wrapper {
+            width: 90px;
+            height: 90px;
+            background: #eff6ff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 20px;
+        }
+
+        .modal-icon-wrapper img {
+            width: 55px;
+            height: 55px;
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #dcfce7;
+            color: #15803d;
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 14px;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--success);
+            border-radius: 50%;
+            animation: pulse 1.5s infinite;
+        }
+
+        .modal-card h2 {
+            font-size: 1.4rem;
+            color: var(--secondary);
+            margin-bottom: 8px;
+        }
+
+        .modal-card p {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            line-height: 1.5;
+            margin-bottom: 24px;
+        }
+
+        .share-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .btn-share {
+            padding: 14px;
+            border-radius: var(--radius);
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #ffffff;
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            transition: opacity 0.2s;
+        }
+
+        .btn-whatsapp { background: #25D366; }
+        .btn-telegram { background: #0088cc; }
+        .btn-share:hover { opacity: 0.9; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes modalPop {
+            from { opacity: 0; transform: scale(0.85); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        @media (max-width: 600px) {
+            .form-grid { grid-template-columns: 1fr; }
+            .full-width { grid-column: span 1; }
+            .content-body { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>Candidate Recruitment Portal</h1>
+            
+        </div>
+
+        <div class="content-body">
+            
+            <!-- STEP 1: JOB DESCRIPTION SECTION -->
+            <div id="jd-section">
+                <div class="jd-card">
+                    <h3><i class="fa-solid fa-briefcase"></i> Job Description: Hindi Evaluator & Remote Candidate</h3>
+                    <p style="margin-bottom: 14px; font-size: 0.9rem; color: #64748b;">
+                        Please read the entire job requirements carefully before unlocking the application form.
+                    </p>
+                    <ul>
+                        <li>Role: Tele-Evaluation & Communication Associate (Hindi Language Specialist).</li>
+                        <li>Eligibility: Freshers, Students, Housewives & Experienced candidates are welcome.</li>
+                        <li>Requirements: Fluent Hindi speaking skills and basic understanding of instructions.</li>
+                        <li>Work Environment: Must have access to a quiet room, adequate lighting, and a active smartphone.</li>
+                        <li>Documentation: Valid Identity proof (PAN Card or Aadhaar Card) is mandatory for verification.</li>
+                        <li>Evaluation Process: Telephonic or Video language screening will take place shortly after application receipt.</li>
+                    </ul>
+                </div>
+                <button class="btn-primary" id="btn-read-jd">
+                    <i class="fa-solid fa-check-circle"></i> I Have Read & Understood The Job Role
+                </button>
+            </div>
+
+            <!-- STEP 2: APPLICATION FORM SECTION -->
+            <div id="form-section">
+                <form id="applicant-form" novalidate>
+                    
+                    <div class="section-title">1. Primary Candidate Details</div>
+                    <div class="form-grid">
+                        <div class="form-group full-width">
+                            <label>Full Name *</label>
+                            <input type="text" id="fullName" placeholder="Enter your full legal name" required>
+                            <div class="error-msg" id="err-fullName">Please enter your full name.</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Email Address *</label>
+                            <input type="email" id="email" placeholder="name@example.com" required>
+                            <div class="error-msg" id="err-email">Enter a valid email address.</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Phone Number *</label>
+                            <input type="tel" id="phone" placeholder="10-digit mobile number" maxlength="10" required>
+                            <div class="error-msg" id="err-phone">Enter a valid 10-digit mobile number.</div>
+                        </div>
+                    </div>
+
+                    <div class="section-title">2. Alternative Emergency Contact</div>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Contact Person Name *</label>
+                            <input type="text" id="altName" placeholder="Family member or reference name" required>
+                            <div class="error-msg" id="err-altName">Please enter reference person name.</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Relation with Candidate *</label>
+                            <input type="text" id="altRelation" placeholder="e.g. Father, Brother, Friend" required>
+                            <div class="error-msg" id="err-altRelation">Please specify relation.</div>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label>Alternative Phone Number *</label>
+                            <input type="tel" id="altPhone" placeholder="Must be different from primary number" maxlength="10" required>
+                            <div class="error-msg" id="err-altPhone">Must be a valid 10-digit number & different from primary phone.</div>
+                        </div>
+                    </div>
+
+                    <div class="section-title">3. Eligibility & Verification Declarations</div>
+                    <div class="checkbox-group">
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="chkIdentity" required>
+                            <span>I possess a valid PAN Card or Aadhaar Card.</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="chkWorkEligibility" required>
+                            <span>I am legally eligible to work in India.</span>
+                        </label>
+                    </div>
+                    <div class="error-msg" id="err-checkboxes" style="margin-bottom: 12px;">Both declaration checkboxes must be checked.</div>
+
+                    <div class="section-title">4. Digital Signature</div>
+                    <div class="form-group">
+                        <label>Sign in Capital Letters *</label>
+                        <input type="text" id="digitalSignature" class="signature-field" placeholder="TYPE YOUR FULL NAME IN CAPITAL LETTERS" required>
+                        <div class="error-msg" id="err-digitalSignature">Please type your signature in capital letters.</div>
+                    </div>
+
+                    <button type="submit" class="btn-primary" id="btn-submit" style="margin-top: 20px;">
+                        <i class="fa-solid fa-paper-plane"></i> Submit Application
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- LOCKED SHARE MODAL POPUP -->
+    <div class="modal-overlay" id="successModal">
+        <div class="modal-card">
+    
+    <div class="status-badge">
+        <span class="status-dot"></span> Application Saved Successfully
+    </div>
+
+    <div class="modal-icon-wrapper">
+        <!-- 2D Handshake / Partnership Icon -->
+        <img src="https://cdn-icons-png.flaticon.com/512/2910/2910791.png" alt="Handshake Opportunity Icon">
+    </div>
+
+    <h2>Help Your Friend Get This Opportunity!</h2>
+    <p>
+        Hum actively <strong>Hindi-speaking candidates</strong> (Students, Housewives, ya Job Seekers) ki hiring kar rahe hain. Apne dosto ki help karein aur unhe abhi ye opportunity share karein!
+    </p>
+
+    <div class="share-actions">
+        <a href="#" id="shareWhatsapp" target="_blank" class="btn-share btn-whatsapp">
+            <i class="fa-brands fa-whatsapp fa-lg"></i> Share on WhatsApp
+        </a>
+        <a href="#" id="shareTelegram" target="_blank" class="btn-share btn-telegram">
+            <i class="fa-brands fa-telegram fa-lg"></i> Share on Telegram
+        </a>
+    </div>
+
+</div>
+    </div>
+
+    <!-- FRONTEND VALIDATION & INTERACTION SCRIPT -->
+    <script>
+        // REPLACE WITH YOUR GOOGLE APPS SCRIPT WEB APP URL IN PHASE 2
+        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwxy-6jUGFKRygcwESHNK8LFlOL4JMMxLzKdje2jN6THNvk7HGBUJCC9FwKM-TiI02y/exec"; 
+
+        const jdSection = document.getElementById('jd-section');
+        const formSection = document.getElementById('form-section');
+        const btnReadJd = document.getElementById('btn-read-jd');
+        const applicantForm = document.getElementById('applicant-form');
+        const successModal = document.getElementById('successModal');
+        const signatureInput = document.getElementById('digitalSignature');
+
+        // Step 1: Unlock Form after Understood click
+        btnReadJd.addEventListener('click', () => {
+            jdSection.style.display = 'none';
+            formSection.style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Force Capital Letters on Signature Field Live
+        signatureInput.addEventListener('input', (e) => {
+            e.target.value = e.target.value.toUpperCase();
+        });
+
+        // Form Submit & Strict Validations
+        applicantForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            let isValid = true;
+
+            // Values
+            const fullName = document.getElementById('fullName').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const altName = document.getElementById('altName').value.trim();
+            const altRelation = document.getElementById('altRelation').value.trim();
+            const altPhone = document.getElementById('altPhone').value.trim();
+            const chkIdentity = document.getElementById('chkIdentity').checked;
+            const chkWorkEligibility = document.getElementById('chkWorkEligibility').checked;
+            const digitalSignature = signatureInput.value.trim();
+
+            // Regex patterns
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const phoneRegex = /^[6-9]\d{9}$/; // Valid 10-digit Indian Mobile Numbers
+
+            // Reset Errors
+            document.querySelectorAll('.error-msg').forEach(el => el.style.display = 'none');
+
+            // 1. Full Name
+            if (!fullName) {
+                document.getElementById('err-fullName').style.display = 'block';
+                isValid = false;
+            }
+
+            // 2. Email Validation
+            if (!emailRegex.test(email)) {
+                document.getElementById('err-email').style.display = 'block';
+                isValid = false;
+            }
+
+            // 3. Primary Phone Validation
+            if (!phoneRegex.test(phone)) {
+                document.getElementById('err-phone').style.display = 'block';
+                isValid = false;
+            }
+
+            // 4. Alt Contact Name & Relation
+            if (!altName) {
+                document.getElementById('err-altName').style.display = 'block';
+                isValid = false;
+            }
+            if (!altRelation) {
+                document.getElementById('err-altRelation').style.display = 'block';
+                isValid = false;
+            }
+
+            // 5. Alt Phone Validation & MUST NOT match Primary Phone
+            if (!phoneRegex.test(altPhone) || altPhone === phone) {
+                const errAlt = document.getElementById('err-altPhone');
+                if(altPhone === phone && phone !== "") {
+                    errAlt.innerText = "Alternative phone number CANNOT be the same as primary phone number.";
+                } else {
+                    errAlt.innerText = "Please enter a valid 10-digit alternative phone number.";
+                }
+                errAlt.style.display = 'block';
+                isValid = false;
+            }
+
+            // 6. Checkboxes Validation
+            if (!chkIdentity || !chkWorkEligibility) {
+                document.getElementById('err-checkboxes').style.display = 'block';
+                isValid = false;
+            }
+
+            // 7. Signature Validation
+            if (!digitalSignature || digitalSignature !== digitalSignature.toUpperCase()) {
+                document.getElementById('err-digitalSignature').style.display = 'block';
+                isValid = false;
+            }
+
+            if (!isValid) return;
+
+            // Submit Button Spinner / Loading state
+            const submitBtn = document.getElementById('btn-submit');
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Submitting Application...`;
+
+            const formData = {
+                fullName,
+                email,
+                phone,
+                altName,
+                altRelation,
+                altPhone,
+                hasDocuments: chkIdentity ? "Yes" : "No",
+                workEligible: chkWorkEligibility ? "Yes" : "No",
+                digitalSignature
+            };
+
+            try {
+                // Send payload to Google Apps Script Web App
+                if(SCRIPT_URL !== "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL") {
+                    await fetch(SCRIPT_URL, {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(formData)
+                    });
+                }
+                
+                // Show Locked Share Modal Popup
+                setupShareLinks();
+                successModal.style.display = 'flex';
+
+            } catch (err) {
+                alert("Network error. Please try submitting again.");
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = `<i class="fa-solid fa-paper-plane"></i> Submit Application`;
+            }
+        });
+
+        // Setup WhatsApp & Telegram Share Content dynamically
+       function setupShareLinks() {
+    const currentUrl = window.location.href;
+    const shareText = encodeURIComponent(
+        "Hey! Hindi speaking candidates (Students, Housewives, ya job seekers) ke liye remote work opportunity hai. Apne friend ki help karo aur form fill karao: " + currentUrl
+    );
+
+    document.getElementById('shareWhatsapp').href = `https://api.whatsapp.com/send?text=${shareText}`;
+    document.getElementById('shareTelegram').href = `https://t.me/share/url?url=${encodeURIComponent(currentUrl)}&text=${shareText}`;
+}
+    </script>
+</body>
+</html>
