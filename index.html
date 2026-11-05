@@ -681,15 +681,24 @@
             }
         });
 
-        // Setup WhatsApp & Telegram Share Content dynamically
-       function setupShareLinks() {
+     // Setup WhatsApp & Telegram Share Content dynamically
+function setupShareLinks() {
     const currentUrl = window.location.href;
-    const shareText = encodeURIComponent(
-        "Hey! Hindi speaking candidates (Students, Housewives, ya job seekers) ke liye remote work opportunity hai. Apne friend ki help karo aur form fill karao: " + currentUrl
-    );
 
-    document.getElementById('shareWhatsapp').href = `https://api.whatsapp.com/send?text=${shareText}`;
-    document.getElementById('shareTelegram').href = `https://t.me/share/url?url=${encodeURIComponent(currentUrl)}&text=${shareText}`;
+    const message = 
+        "Hello! There's a remote work opportunity available for Hindi-speaking individuals, including students, homemakers, and job seekers.\n\n" +
+        "If you or someone you know is interested, you can explore the opportunity and submit an application using the link below:\n\n" +
+        currentUrl;
+
+    const shareText = encodeURIComponent(message);
+
+    document.getElementById('shareWhatsapp').href =
+        `https://api.whatsapp.com/send?text=${shareText}`;
+
+    document.getElementById('shareTelegram').href =
+        `https://t.me/share/url?url=${encodeURIComponent(currentUrl)}&text=${encodeURIComponent(
+            "Hello! There's a remote work opportunity for Hindi-speaking individuals, including students, homemakers, and job seekers. If you're interested, check out the details and apply here:"
+        )}`;
 }
     </script>
 </body>
